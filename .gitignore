@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# 工具缓存
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+
+# 密钥：绝不要提交真实的 OpenAI API Key
+API key.txt
+api_key.txt
+apikey.txt
+.env
+*.local
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 本地辅助文件与压缩包产物
+.releasetools/
+.releasetools-tmp/
+*.zip

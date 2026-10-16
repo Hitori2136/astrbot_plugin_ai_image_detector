@@ -1,0 +1,9 @@
+# 统一换行符：仓库内一律 LF，避免 Windows/Linux 之间产生整文件 diff
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary

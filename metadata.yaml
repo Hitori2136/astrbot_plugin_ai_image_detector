@@ -1,0 +1,27 @@
+name: astrbot_plugin_ai_image_detector
+display_name: AI 图片检测（ChatGPT 水印）
+desc: "在群里 @机器人 并发送「ai吗」，即可检测图片是否带有 OpenAI（ChatGPT）来源水印，基于 OpenAI Content Provenance API。"
+short_desc: "@机器人 发「ai吗」，检测图片是否带 OpenAI 来源水印"
+version: v1.0.0
+author: Hitori2136
+repo: https://github.com/Hitori2136/astrbot_plugin_ai_image_detector
+astrbot_version: ">=4.16,<5"
+support_platforms:
+  - aiocqhttp
+  - telegram
+  - discord
+  - lark
+  - dingtalk
+  - kook
+  - slack
+  - wecom
+  - wecom_ai_bot
+  - weixin_official_account
+  - weixin_oc
+  - satori
+  - misskey
+  - line
+  - matrix
+  - mattermost
+  - qq_official
+  - qq_official_webhook

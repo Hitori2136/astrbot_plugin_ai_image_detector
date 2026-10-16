@@ -1,0 +1,80 @@
+{
+  "openai_api_key": {
+    "description": "OpenAI API Key（sk- 或 sk-proj- 开头）",
+    "type": "string",
+    "hint": "用于调用 OpenAI Content Provenance API。",
+    "default": ""
+  },
+  "api_base": {
+    "description": "接口地址",
+    "type": "string",
+    "hint": "默认使用 OpenAI 官方地址。如需走代理或自建网关，填写其地址，例如 https://your-gateway.example.com/v1 。",
+    "default": "https://api.openai.com/v1"
+  },
+  "proxy": {
+    "description": "代理地址",
+    "type": "string",
+    "hint": "可选，例如 http://127.0.0.1:7890。",
+    "default": ""
+  },
+  "use_env_proxy": {
+    "description": "代理留空时沿用系统代理",
+    "type": "bool",
+    "hint": "仅在「代理地址」留空时生效。",
+    "default": true
+  },
+  "trigger_keywords": {
+    "description": "触发关键词",
+    "type": "list",
+    "hint": "消息中同时 @机器人 且包含以下任意关键词时触发检测，忽略大小写与首尾空白。",
+    "default": ["ai吗"]
+  },
+  "require_at_bot": {
+    "description": "必须 @机器人 才触发",
+    "type": "bool",
+    "hint": "关闭后私聊场景无需 @机器人 也能触发。",
+    "default": true
+  },
+  "reply_with_at": {
+    "description": "回复时 @提问者",
+    "type": "bool",
+    "hint": "关闭后只发送纯文本结论。",
+    "default": false
+  },
+  "max_images_per_message": {
+    "description": "单条消息最多检测的图片数量",
+    "type": "int",
+    "hint": "取值范围 1-5，超出的图片会被忽略。",
+    "default": 1
+  },
+  "timeout_seconds": {
+    "description": "请求超时（秒）",
+    "type": "int",
+    "hint": "取值范围 5-300。",
+    "default": 60
+  },
+  "notify_on_start": {
+    "description": "检测前先发一条提示",
+    "type": "bool",
+    "hint": "开启后会在请求接口前发送「正在检测…」，等待时间较长时体验更好。",
+    "default": false
+  },
+  "show_details": {
+    "description": "附上检测明细",
+    "type": "bool",
+    "hint": "开启后会在结论后附加 C2PA / SynthID 的原始结论与元数据。",
+    "default": false
+  },
+  "reply_text_detected": {
+    "description": "检测到时的回复文案",
+    "type": "string",
+    "hint": "可用占位符：{signals} 命中的信号，{models} 来源模型/签发方；两者为空时替换为空。留空使用默认文案。",
+    "default": "检测到 OpenAI 水印，图片是 AI 生成（命中：{signals}）\n来源模型/签发方：{models}"
+  },
+  "reply_text_not_detected": {
+    "description": "未检测到时的回复文案",
+    "type": "string",
+    "hint": "留空使用默认文案。",
+    "default": "未检测到 OpenAI 水印，无法判断"
+  }
+}
